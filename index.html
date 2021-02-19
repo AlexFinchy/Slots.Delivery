@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;800&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0px;
+      font-family: 'Baloo Paaji 2', cursive;
+    }
+
+    #mainheader {
+      padding: 0px;
+      margin: 0px;
+      font-family: 'Baloo Paaji 2', cursive;
+      font-weight: 500;
+      font-size: 35px;
+      color: #41B3A3;
+      display: inline;
+      margin-right: 250px;
+      
+    }
+    
+
+
+    #how {
+      height: 100vh;
+      color: #41B3A3;
+      background-color: white;
+    }
+
+
+    #why {
+      height: 100vh;
+      color: white;
+      background-color: #41B3A3;
+    }
+
+
+    #what {
+      height: 100vh;
+      width: 100%;
+      color: #41B3A3;
+      background-color: white;
+    }
+
+    #home {
+      height: 100vh;
+      width: 100%;
+      color: white;
+      background-color: #41B3A3;
+    }
+
+    .bulletcontainer {
+      font-size: 30px;
+      padding: 0px 20px 0px 20px;
+    }
+
+    .bulletcontainer ul {
+      list-style: none;
+      display: inline;
+    }
+
+    #bulletheader {
+      margin: 0px 0px 20px 0px;
+      font-size: 30px;
+
+    }
+
+    .homegreentick {
+      width: 20px;
+      display: inline;
+    }
+
+
+    #starterheader {
+      color: #EEF1E6;
+      font-family: 'Roboto', sans-serif;
+      font-size: 40px;
+      padding: 0px 20px 0px 20px;
+      
+    }
+
+    #startbutton {
+      font-family: 'Roboto', sans-serif;
+      border: 2px solid #EEF1E6;
+      color: #EEF1E6;
+      font-size: 50px;
+      background-color: transparent;
+      transition: all 1000ms;
+    }
+
+    #startbutton:hover {
+      background-color: #EEF1E6;
+      color: #41B3A3;
+      cursor: pointer;
+    }
+
+    #startcontainer {
+      width: 500px;
+      margin: auto;
+      text-align: center;
+    }
+
+    #startcontainer p {
+      font-family: 'Roboto', sans-serif;
+      color: #EEF1E6;
+      font-size: 35px;
+    }
+
+    
+    .mainnavbar li {
+      display: inline;
+    }
+
+    .mainnavbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mainnavbar a {
+      border-color: #41B3A3;
+      transition: all 0.2s;
+      color: grey;
+      font-family: 'Baloo Paaji 2', cursive;
+      font-size: 30px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    .mainnavbar a:hover {
+      border-bottom: 4px solid #41B3A3;
+    }
+
+    .mainnavbar a.current {
+      border-bottom: 4px solid #41B3A3;
+    }
+
+
+    #navcontainer {
+      background-color: white;
+      position: sticky;
+      top: 0;
+      margin-top: 10px;
+      padding-bottom: 5px;
+      text-align: center;
+    }
+
+
+    #mainpage-content {
+      margin-top: 10px;
+      height: 100%;
+    }
+
+
+
+
+
+
+    #checklist li {
+      vertical-align: top;
+      text-align: left;
+      list-style-type: none;
+    }
+
+    #checklist {
+      font-size: 1.5vw;
+      padding-left: 0px;
+    }
+
+
+    .medium_header {
+      margin-bottom: 10px;
+      font-size: 2vw;
+    }
+
+    .styled_btn {
+      transition: all 0.3s;
+      background: transparent;
+      border: none;
+      font-family: 'Baloo Paaji 2', cursive;
+      font-size: 30px;
+      color: white;
+      border: 2px white solid;
+    }
+
+    .styled_btn:hover {
+      cursor: pointer;
+      color: #41B3A3;
+      background-color: white;
+    }
+
+
+    #homedashimage {
+      width: 650px;
+    }
+
+
+    .flexlayout {
+      padding-top: 5vh;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .flexleft {
+      height: 100%;
+    }
+
+    .flexright {
+      height: 100%;
+    }
+
+    .whitetext {
+      color: white;
+    }
+
+    #loginbutton {
+      margin-left: 30px;
+
+      color: white;
+      color: #41B3A3;
+    }
+
+    #loginbutton:hover {
+      border: none;
+      color: white;
+      background-color: #41B3A3;
+    }
+
+    #footer {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      color: white;
+      background-color: #41B3A3;
+      text-align: center;
+      border-top-right-radius: 60%;
+      border-top-left-radius: 60%;
+    }
+
+    .footerlink {
+      margin-right: 10px;
+      margin-left: 10px;
+      color: white;
+    }
+
+  </style>
+
+
+
+</head>
+<body>
+  <div id="navcontainer">
+    <ul class="mainnavbar">
+      <li> <p id="mainheader"> Slots.delivery </p></li>
+      <li> <a href="#home">Home</a> </li>
+      <li> <a href="#what">What?</a> </li>
+      <li> <a href="#why">Why?</a> </li>
+      <li> <a href="#how">How?</a> </li>
+      <li> <a id="loginbutton" href="./login">Login</a> </li>
+    </ul>
+  </div>
+
+
+  <div id="mainpage-content">
+    <section class="flexlayout whitetext" id="home">
+      <div id="lefthome">
+        <h2 class="medium_header"> Modernise online shopping</h2>
+        <ul id="checklist">
+          <li><image class="homegreentick" src="./res/images/greentick.svg"></image> Schedule delivery slots in advance </li>
+          <li><image class="homegreentick" src="./res/images/greentick.svg"></image> Automatically book slots when they come available </li>
+          <li><image class="homegreentick" src="./res/images/greentick.svg"></image> Create virtual shopping lists linked with multiple supermarkets </li>
+          <li><image class="homegreentick" src="./res/images/greentick.svg"></image> Priority premium FREE for vulnerable customers </li>
+        </ul>
+
+        <h2 class="medium_header"> Like what you see? </h2>
+        <button id="getstarted" class="styled_btn"> Get started for free </button>
+
+      </div>
+
+      <div id="righthome">
+        <img id="homedashimage" src="./res/img/dashboard.jpg"> </img>
+      </div>
+
+    </section>
+    <section class="flexlayout" id="what">
+      <div class="flexleft">
+        <h1> Flowchart design here</h1>
+      </div>
+      <div class="rightflex">
+        <h2 class="medium_header"> What do we do ?</h2>
+        <p> The aim of Slots.Delivery is to help organise online deliveries</p>
+      </div>
+    </section>
+    <section id="why">
+    </section>
+    <section id="how">
+    </section>
+
+
+
+
+  <script>
+
+    document.getElementById("getstarted").addEventListener("click", function() {
+      window.location = "https://slots.delivery/login"
+    });
+
+    let mainNavLinks = document.querySelectorAll("ul li a");
+    let mainSections = document.querySelectorAll("section");
+    
+    let lastId;
+    let cur = [];
+    
+    window.addEventListener("scroll", event => {
+      let fromTop = window.scrollY;
+    
+      mainNavLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+          section.offsetTop <= fromTop+50 &&
+          section.offsetTop + section.offsetHeight > fromTop+50
+        ) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");
+        }
+      });
+    });
+    
+    
+      </script>
+<footer id="footer">
+  ©2020 Slots Delivery Limited. All rights reserved.
+  <a class="footerlink" href="#">Terms & Conditions</a>
+  <a class="footerlink" href="#">Privacy notice</a>
+  <a class="footerlink" href="#">Cookies</a>
+</footer>
+
+</body>
+
+
+</html>

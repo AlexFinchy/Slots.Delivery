@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+
+  <script type="text/javascript">
+    var onloadCallback = function() {
+      //Do that shit to make sure they don't log in before its ready
+    };
+  </script>
+
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+  async defer>
+  </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+  <style type="text/css">
+
+    *{
+      box-sizing: border-box;
+      font-family: 'Baloo Paaji 2', cursive;
+    }
+
+    body{
+      background: #f6f5f7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1{
+      margin: 0;
+      font-weight: bold;
+    }
+
+    p{
+      font-size: 14px;
+      font-weight: 100;  
+      line-height: 20px;
+      letter-spacing: 0.5px;
+      margin: 20px 0 30px;
+    }
+
+    a{
+        color: #333;
+        font-size: 14px;
+        text-decoration: none; 
+        margin: 15px 0;
+    }
+
+    input{
+    background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+    }
+
+    .container{
+      background: white;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      width: 60%;
+      height: 70%;
+      min-height: 480px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    .form-container form{
+      background: white;
+      display: flex;
+      flex-direction: column;
+      padding: 0 50px;
+      height: 100%;
+      justify-content: center;;
+      align-items: center;
+      text-align: center;
+    }
+
+    button{
+      font-weight: 500;
+      margin-top: 50px;
+      padding: 10px;
+      width: 100%;
+      border-style: solid;
+      border-color: #41B3A3;
+      border-width: 1px;
+      background-color: white;
+      color: #41B3A3;
+    }
+
+    button.ghost{
+      font-weight: 500;
+      border-radius: 5px;
+      padding: 10px;
+      border-style: solid;
+      border-color: white;
+      border-width: 1px;
+      background-color: transparent;
+      color: white;
+      width: 70%;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color: #41B3A3;
+        color: white;
+    }
+
+    button.ghost:hover{
+        cursor: pointer;
+        background-color: white; 
+        color: #41B3A3;      
+    }
+
+    .form-container{
+      position: absolute;
+      top: 0;
+      height: 100%;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .login-container{
+      left: 0;
+      width: 50%;
+      z-index: 2;
+    }
+
+    .sign-up-container{
+      left: 0;
+      width: 50%;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .overlay-container{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: transform 0.6s ease-in-out;
+      z-index: 100;
+    }
+
+    .overlay{
+      background: #41B3A3;
+	  background: -webkit-linear-gradient(to right, #389dc7, #41B3A3);
+	  background: linear-gradient(to right, #389dc7, #41B3A3);
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  background-position: 0 0;
+	  color: #FFFFFF;
+	  position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .overlay-panel{
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .overlay-right{
+      right: 0;
+      transform: translateX(0);
+    }
+
+    .overlay-left{
+      transform: translateX(-20%);
+    }
+
+    .container.right-panel-active .login-container {
+      transform: translateX(100%);
+    }
+
+    .container.container.right-panel-active .overlay-container {
+      transform: translateX(-100%);
+    }
+
+    .container.right-panel-active .sign-up-container{
+      transform: translateX(100%);
+      opacity: 1;
+      z-index: 5;
+    }
+
+    .container.right-panel-active .overlay{
+      transform: translateX(50%);
+    }
+
+    .container.container.right-panel-active .overlay-left{
+      transform: translateX(0);
+    }
+
+    .container.container.right-panel-active .overlay-right{
+      transform: translateX(20%);
+    }
+
+    form a{
+        font-size: 12px;
+        text-decoration: underline; 
+
+    }
+
+    .errorMsg{
+      color: red;
+      display: none;
+    }
+
+    #signUpContainer{
+      width: 30%;
+      height: 80%;
+      display: none;
+    }
+
+  </style>
+
+  <script src="https://kit.fontawesome.com/3c73edcc97.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="login-container form-container">
+      <form action="#" id="loginform">
+        <h1>Sign In</h1>
+        <input name="email" type="email" placeholder="Email" />
+        <input name="password" type="password" placeholder="Password" />
+        <span id="emailPswdErrorMsg" class="errorMsg">Email or password incorrect</span>
+        <a href="#">Forget Password?</a>
+        <div class="g-recaptcha" data-sitekey="6LfGT-wUAAAAAOG__oyGpwjbAISRPZhPMnvEBPuV"></div>
+        <span id="captchaErrorMsg" class="errorMsg">Please complete the captcha</span>
+        <button>Sign In</button>
+      </form>
+    </div>
+    <div class="sign-up-container form-container">
+      <form action="#">
+        <h1>Sign Up</h1>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Re-enter password" />
+        <button onclick='startSignUp()'> Sign Up </button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-left overlay-panel">
+          <h1>Welcome back!</h1>
+          <p>To keep connected with us please login</p>
+          <button class="ghost" id="login">Sign In</button>
+        </div>
+        <div class="overlay-right overlay-panel">
+          <h1>Sign Up</h1>
+          <p>Create an account and start browsing for free!</p>
+          <button class="ghost" id="signUp">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const signUpButton = document.getElementById('signUp');
+    const loginButton = document.getElementById('login');
+    const container = document.getElementById('container');
+
+    if(signUpButton){ 
+    signUpButton.addEventListener('click', () => 
+      container.classList.add('right-panel-active')
+    );
+    }
+
+    if(loginButton) { 
+    loginButton.addEventListener('click', () => 
+      container.classList.remove('right-panel-active')  
+    );
+    }
+
+
+    //We need to check if they are already logged in when they join this page and if so redriect AJAX - note to Alex
+
+    $('#loginform').submit(function(event) {
+      event.preventDefault();
+      $.post("../api/login.php",$('#loginform').serialize(), function(response) {
+        grecaptcha.reset();
+        //This is the function that runs after it trys to login
+        var responseobj = JSON.parse(response);
+        
+        if(responseobj.success == false){
+          if(responseobj.reason == "Captcha invalid"){
+            document.getElementById("emailPswdErrorMsg").style.display = "hidden";
+            document.getElementById("captchaErrorMsg").style.display = "block";
+          } else{
+            document.getElementById("captchaErrorMsg").style.display = "hidden";
+            document.getElementById("emailPswdErrorMsg").style.display = "block";
+          }
+        } else {
+          alert(responseobj.success);
+        }
+
+      });
+      return false;
+    });
+
+  </script>
+
+</body>
+
+</html>

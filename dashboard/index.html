@@ -1,0 +1,219 @@
+<html>
+    <meta charset="utf-8">
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;800&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0px;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+
+
+#dashnav {
+    font-family: 'Baloo Paaji 2', cursive;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+    background: -webkit-linear-gradient(to top, #389dc7, #41B3A3);
+	background: linear-gradient(to top, #389dc7, #41B3A3);
+    position: fixed;
+    width: 11%;
+    height: 100%;
+    overflow: auto;
+}
+
+#dashnav li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+#dashnav li a:hover {
+    background-color: white;
+    color: #41B3A3;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+
+.navdashheader {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+#dashboardcontent {
+    float: right;
+    width: calc(89% - 40px);
+    margin-top: 25px;
+}
+
+.dashcard {
+    color: #41B3A3;
+    border-radius: 10px;
+    text-align: left;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.dashcard h3 {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: #41B3A3;
+}
+
+
+.cardlayout {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cardcontent {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.stlyed_btn {
+    border: none;
+    background: none;
+    font-family: 'Baloo Paaji 2', cursive;
+    color: #41B3A3;
+    border: 1px solid #41B3A3;
+    transition: all 0.25s;
+}
+
+.stlyed_btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color:#41B3A3;
+    border: 1px solid #41B3A3;
+}
+
+.medium_btn {
+    font-size: 1.7vw;
+}
+
+.center_btn {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+    <div id="dashnavcontainer">
+        <ul id="dashnav">
+            <h2 class="navdashheader">Slots.Delivery</h2>
+            <li> <a class="selected" name="home" href="#">Dashboard</a> </li>
+            <li> <a name="orders" href="#">Slots & Orders</a> </li>
+            <li> <a name="lists" href="#">Shopping Lists</a> </li>
+            <li> <a name="supermarkets" href="#">Linked Supermarkets</a> </li>
+            <li> <a name="account" href="#">Account Information</a> </li>
+            <li> <a name="plans" href="#">Billing & Plan</a> </li>
+            <li> <a name="logout" href="../login">Logout</a> </li>
+        </ul>
+    </div>
+
+    <div id="dashboardcontent">
+        <div id="dashboardhome">
+            <div class="cardlayout">
+                <div class="dashcard">
+                    <h3> Recent Orders</h3> 
+                    <div class="line"></div>
+                    <div class="cardcontent">
+                        <p> You have no recent orders place one here</p>
+                    </div>
+                 </div>
+                 <div class="dashcard">
+                    <h3> Shopping Lists </h3> 
+                    <div class="line"></div>
+                    <div class="cardcontent">
+                        <p> You have no shopping lists! Make one here </p>
+                    </div>
+                 </div>
+                 <div class="dashcard">
+                    <h3> Payment </h3> 
+                    <div class="line"></div>
+                    <div class="cardcontent">
+                        <p> You have the FREE plan </p>
+                        <p class="inline"> Your next payment is due </p> <p class="inline" id="payment_due">--/--/--</p>
+                        <button class="block stlyed_btn medium_btn center_btn"> Upgrade Plan </button>
+                    </div>
+                 </div>
+            </div>
+            <div class="cardlayout ">
+                <div class="dashcard">
+                    <h3> Referrals </h3> 
+                    <div class="line"></div>
+                </div>
+                <div class="dashcard">
+                    <h3> Updates </h3> 
+                    <div class="line"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var currentpage = document.getElementById("dashboardhome");
+
+        let childrenlinks = document.querySelectorAll("div ul li a");
+
+        childrenlinks.forEach(link => {
+            let div = document.getElementById("dashboard" + link.name);
+            link.addEventListener('click', function() {
+                if(currentpage != div) {
+                    if(currentpage != null) {
+                    currentpage.display = "none";
+                }
+                div.style.display = "block";
+                currentpage.style.display = "none";
+                currentpage = div;
+                }
+
+             });
+        });
+
+        
+        </script>
+
+</body>
+
+
+</html>
